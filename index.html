@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing System</title>
+    <style>
+        /* Add your CSS styling here */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 1140px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .bill-system{
+            padding: 50px;    
+            background-color: #d3b3e5;
+        }
+        .section {
+            margin: 30px;
+        }
+        .d-flex{
+            display: flex;
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .w-3{
+            width: 33.33%;
+        }
+        .justify-content-around{
+            justify-content: space-around;
+        }
+        .section label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .section input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .buttons button{
+            background-color: black;
+            color: white;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border: none;
+        }
+        .bill-area {
+            border: 1px solid #000;
+            padding: 10px;
+            background-color: #fff;
+            height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="bill-system">
+                <h1>Billing System</h1>
+                <div class="section">
+                    <label for="customerName">Customer Name</label>
+                    <input type="text" id="customerName">
+                    <label for="contactNo">Contact No.</label>
+                    <input type="text" id="contactNo">
+                    <label for="billNo">Bill No.</label>
+                    <input type="text" id="billNo">
+                </div>
+                <div class="row">
+                    <div class="w-3">
+                        <div class="section">
+                            <h2>Snacks</h2>
+                            <label for="snack1">Nutella Choco Spread</label>
+                            <input type="number" id="snack1" min="0">
+                            <label for="snack2">Noodles(1 Pack)</label>
+                            <input type="number" id="snack2" min="0">
+                            <label for="snack3">Lays(10Rs)</label>
+                            <input type="number" id="snack3" min="0">
+                            <label for="snack4">Oreo(20Rs)</label>
+                            <input type="number" id="snack4" min="0">
+                            <label for="snack5">Chocolate Muffin</label>
+                            <input type="number" id="snack5" min="0">
+                            <label for="snack6">Dairy Milk Silk(60Rs)</label>
+                            <input type="number" id="snack6" min="0">
+                            <label for="snack7">Namkeens(5Rs)</label>
+                            <input type="number" id="snack7" min="0">
+                        </div>
+                    </div>
+                    <div class="w-3">
+                        <div class="section">
+                            <h2>Grocery</h2>
+                            <label for="grocery1">Aashirvaad Atta(1kg)</label>
+                            <input type="number" id="grocery1" min="0">
+                            <label for="grocery2">Pasta(1kg)</label>
+                            <input type="number" id="grocery2" min="0">
+                            <label for="grocery3">Basmati Rice(1kg)</label>
+                            <input type="number" id="grocery3" min="0">
+                            <label for="grocery4">Sunflower Oil(1ltr)</label>
+                            <input type="number" id="grocery4" min="0">
+                            <label for="grocery5">Refined Sugar(1kg)</label>
+                            <input type="number" id="grocery5" min="0">
+                            <label for="grocery6">Daal(1kg)</label>
+                            <input type="number" id="grocery6" min="0">
+                            <label for="grocery7">Tea Powder(1kg)</label>
+                            <input type="number" id="grocery7" min="0">
+                        </div>
+                    </div>
+                    <div class="w-3">
+                        <div class="section">
+                            <h2>Beauty & Hygiene</h2>
+                            <label for="beauty1">Bathing Soap</label>
+                            <input type="number" id="beauty1" min="0">
+                            <label for="beauty2">Shampoo(1ltr)</label>
+                            <input type="number" id="beauty2" min="0">
+                            <label for="beauty3">Body Lotion(1ltr)</label>
+                            <input type="number" id="beauty3" min="0">
+                            <label for="beauty4">Face Cream</label>
+                            <input type="number" id="beauty4" min="0">
+                            <label for="beauty5">Shaving Foam</label>
+                            <input type="number" id="beauty5" min="0">
+                            <label for="beauty6">Face Mask(1piece)</label>
+                            <input type="number" id="beauty6" min="0">
+                            <label for="beauty7">Hand Sanitizer(50ml)</label>
+                            <input type="number" id="beauty7" min="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Billing Summary</h2>
+                    <label for="totalSnacksPrice">Total Snacks Price</label>
+                    <input type="text" id="totalSnacksPrice" readonly>
+                    <label for="snacksTax">Snacks Tax</label>
+                    <input type="text" id="snacksTax" readonly>
+                    <label for="totalGroceryPrice">Total Grocery Price</label>
+                    <input type="text" id="totalGroceryPrice" readonly>
+                    <label for="groceryTax">Grocery Tax</label>
+                    <input type="text" id="groceryTax" readonly>
+                    <label for="totalBeautyPrice">Total Beauty & Hygiene Price</label>
+                    <input type="text" id="totalBeautyPrice" readonly>
+                    <label for="beautyTax">Beauty & Hygiene Tax</label>
+                    <input type="text" id="beautyTax" readonly>
+                </div>
+                <div class="buttons">
+                    <button id="totalBillBtn">Total Bill</button>
+                    <button id="clearBtn">Clear Field</button>
+                    <button id="exitBtn">Exit</button>
+                </div>
+                <div class="bill-area" id="billArea">
+                    <p>Bill Area</p>
+                    <p id="billDetails"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>
